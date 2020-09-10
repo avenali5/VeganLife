@@ -1,0 +1,112 @@
+/*FOOTER*/
+.footer-max-width{
+    max-width:56rem;
+    position:relative;
+    left:50%;
+    transform:translateX(-50%)
+}
+.footer-container{
+    padding:2rem 1rem;
+    background: var(--dark-background);
+    color: var(--footer-text-color);
+}
+.footer-flex{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.stay-connected,
+.about-us,
+.navigate,
+.extra-info .links-container{
+    margin: 1rem auto;
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+}
+.footer-container h4{
+    margin-bottom: 1rem;
+}
+.stay-connected input{
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+.stay-connected input:focus,
+.stay-connected input:active{
+    outline:1px solid var(--main-color);
+}
+.stay-connected .footer-btn{
+    border-radius: 0rem;
+    text-align: center;
+    margin-bottom: 5px;
+    cursor:pointer
+}
+.stay-connected p{
+    font-size: 0.7rem;
+}
+.about-us p{
+    line-height: 150%;
+}
+.navigate .lists{
+    display:flex;
+    justify-content: space-between;
+    line-height: 200%;
+}
+.lists ul:nth-child(2){
+    text-align:right
+}
+.extra-info{
+    text-align: center;
+    color: var(--footer-text-color);
+}
+.extra-info hr:nth-child(1){
+    margin-bottom: 1.2rem
+}
+
+
+@media(min-width:750px){
+.footer-container{
+        padding: 3rem 4.5rem
+    }
+}
+
+@media(min-width:1000px){
+    /*FOOTER*/
+    .footer-container,
+    .stay-connected input{
+        font-size: 0.7rem;
+    }
+    .footer-flex{
+        flex-direction:row;
+    }
+    .stay-connected,
+    .about-us,
+    .navigate{
+        margin: 0rem 0rem auto;
+        top:0;
+        position:relative
+    }
+    .stay-connected input,
+    .stay-connected a{
+        padding: 0.6rem;
+    }
+    .about-us{
+        margin:0 6rem auto;
+    }
+    .extra-info{
+        margin-top:2.5rem;
+        width:50%;
+        position:relative;
+        left:50%;
+        transform:translateX(-50%)
+    }
+    .extra-info .links-container{
+        flex-direction:row;
+        width: max-content;
+    }
+    .extra-info .links-container h4{
+        margin: auto 2rem;
+    }
+}

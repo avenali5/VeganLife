@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeganLife | Inspiraciones</title>
+    <link rel="stylesheet" href="CSS/generalSettings.css">
+    <link rel="stylesheet" href="CSS/navBar.css">
+    <link rel="stylesheet" href="CSS/inspirations.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Catamaran:wght@600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="app">
+        <inspirations></inspirations>        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="componentes/footer.js"></script>
+    <script src="componentes/Inspirations/testimonals.js"></script>
+    <script src="componentes/Inspirations/movies.js"></script>
+    <script src="componentes/Inspirations/books.js"></script>
+    <script src="componentes/Inspirations/heroInsp.js"></script>
+    <script src="componentes/navBar.js"></script>
+    <script src="componentes/Inspirations/Inspirations.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+        })        
+    </script>
+    <!--booksJS-->
+    <script>
+        let Bslider = document.querySelector('.books-items');
+        let BisDown = false;
+        let BstartX;
+        let BscrollLeft;
+
+        Bslider.addEventListener('mousedown', (b) => {
+            BisDown = true;
+            BstartX = b.pageX - Bslider.offsetLeft;
+            BscrollLeft = Bslider.scrollLeft;
+        });
+        Bslider.addEventListener('mouseleave', () => {
+            BisDown = false;
+        });
+        Bslider.addEventListener('mouseup', () => {
+            BisDown = false;
+        });
+        Bslider.addEventListener('mousemove', (b) => {
+            if (!BisDown) return;
+            b.preventDefault();
+            const Bx = b.pageX - Bslider.offsetLeft;
+            const Bwalk = (Bx - BstartX) * 1;
+            Bslider.scrollLeft = BscrollLeft - Bwalk;
+        });
+    </script> 
+    <!--moviesJS-->
+    <script>
+            let Mslider = document.querySelector('.movies-items');
+            let MisDown = false;
+            let MstartX;
+            let MscrollLeft;
+
+            Mslider.addEventListener('mousedown', (m) => {
+                MisDown = true;
+                MstartX = m.pageX - Mslider.offsetLeft;
+                MscrollLeft = Mslider.scrollLeft;
+            });
+            Mslider.addEventListener('mouseleave', () => {
+                MisDown = false;
+            });
+            Mslider.addEventListener('mouseup', () => {
+                MisDown = false;
+            });
+            Mslider.addEventListener('mousemove', (m) => {
+                if (!MisDown) return;
+                m.preventDefault();
+                const Mx = m.pageX - Mslider.offsetLeft;
+                const Mwalk = (Mx - MstartX) * 1;
+                Mslider.scrollLeft = MscrollLeft - Mwalk;
+            });
+    </script>
+    <!--testimonialsJS-->
+    <script>
+        let slider = document.querySelector('.testimonials-items');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/tilt.js@1.1.21/dest/tilt.jquery.min.js"></script>
+</body>
+
+</html>

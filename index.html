@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeganLife</title>
+    <link rel="stylesheet" href="CSS/generalSettings.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/navBar.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Catamaran:wght@600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/x-icon">
+</head>
+<body>
+        
+        <div id="app">
+            <landing-page></landing-page>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="componentes/footer.js"></script>
+        <script src="componentes/Landing page/Blogs&Recipes.js"></script>
+        <script src="componentes/Landing page/inspirationPreview.js"></script>
+        <script src="componentes/Landing page/cards.js"></script>
+        <script src="componentes/Landing page/heroSection.js"></script>
+        <script src="componentes/navBar.js"></script>
+        <script src="componentes/Landing page/landingPage.js"></script>
+        <script>
+            let vm = new Vue({
+                el: '#app',
+            })
+        </script>
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/tilt.js@1.1.21/dest/tilt.jquery.min.js"></script>
+</body>
+</html>

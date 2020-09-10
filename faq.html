@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeganLife | Preguntas frecuentes</title>
+    <link rel="stylesheet" href="CSS/generalSettings.css">
+    <link rel="stylesheet" href="CSS/navBar.css">
+    <link rel="stylesheet" href="CSS/faq.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Catamaran:wght@600&display=swap"rel="stylesheet">
+    <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="app">
+        <faqs></faqs>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="componentes/footer.js"></script>
+    <script src="componentes/Faq/questions.js"></script>
+    <script src="componentes/navBar.js"></script>
+    <script src="componentes/Faq/faq.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+        })
+    </script>
+</body>
+
+</html>

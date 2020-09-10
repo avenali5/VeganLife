@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeganLife | Recetas</title>
+    <link rel="stylesheet" href="CSS/generalSettings.css">
+    <link rel="stylesheet" href="CSS/navBar.css">
+    <link rel="stylesheet" href="CSS/recipes.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Catamaran:wght@600&display=swap"rel="stylesheet">
+    <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="app">
+        <recipes></recipes>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="componentes/footer.js"></script>
+    <script src="componentes/Recipes/lunchRecipes.js"></script>
+    <script src="componentes/Recipes/heroRECIPES.js"></script>
+    <script src="componentes/Recipes/recipeCards.js"></script>
+    <script src="componentes/navBar.js"></script>
+    <script src="componentes/Recipes/recipes.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+        })
+    </script> 
+    <script>
+        document.getElementById("defaultOpen").click();
+    </script>
+    <!--desayunos-->
+    <script>
+        let Bslider = document.querySelector('.card-box');
+        let BisDown = false;
+        let BstartX;
+        let BscrollLeft;
+
+        Bslider.addEventListener('mousedown', (b) => {
+            BisDown = true;
+            BstartX = b.pageX - Bslider.offsetLeft;
+            BscrollLeft = Bslider.scrollLeft;
+        });
+        Bslider.addEventListener('mouseleave', () => {
+            BisDown = false;
+        });
+        Bslider.addEventListener('mouseup', () => {
+            BisDown = false;
+        });
+        Bslider.addEventListener('mousemove', (b) => {
+            if (!BisDown) return;
+            b.preventDefault();
+            const Bx = b.pageX - Bslider.offsetLeft;
+            const Bwalk = (Bx - BstartX) * 1; //scroll-fast
+            Bslider.scrollLeft = BscrollLeft - Bwalk;
+        });
+    </script>
+    <!--almuerzos-->
+    <script>
+        let Mslider = document.querySelector('.card-box-two');
+        let MisDown = false;
+        let MstartX;
+        let MscrollLeft;
+
+        Mslider.addEventListener('mousedown', (m) => {
+            MisDown = true;
+            MstartX = m.pageX - Mslider.offsetLeft;
+            MscrollLeft = Mslider.scrollLeft;
+        });
+        Mslider.addEventListener('mouseleave', () => {
+            MisDown = false;
+        });
+        Mslider.addEventListener('mouseup', () => {
+            MisDown = false;
+        });
+        Mslider.addEventListener('mousemove', (m) => {
+            if (!MisDown) return;
+            m.preventDefault();
+            const Mx = m.pageX - Mslider.offsetLeft;
+            const Mwalk = (Mx - MstartX) * 1;
+            Mslider.scrollLeft = MscrollLeft - Mwalk;
+        });
+    </script>
+    <!--postres-->
+    <script>
+        let slider = document.querySelector('.card-box-three');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/tilt.js@1.1.21/dest/tilt.jquery.min.js"></script>
+</body>
+
+</html>
